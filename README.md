@@ -12,7 +12,7 @@ There are two quotes that I like from Clean Architecutre.
 
 > The center of your application is not the database. Nor is it one or more of the frameworks you may be using. **The center of your application is the use cases of your application** - *Unclebob* ([source](https://blog.8thlight.com/uncle-bob/2012/05/15/NODB.html))
 
-> The Single Responsibility Principle (SRP) states that each software module should have one and only one reason to change - *Unclebob* ([source](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html))
+> The Single Responsibility Principle (SRP) states that each software **module should have one and only one reason to change** ... as you think about this principle, remember that **the reasons for change are people**. It is people who request changes. And you don’t want to confuse those people, or yourself, by mixing together the code that many different people care about for different reasons. - *Unclebob* ([source](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html))
 
 When I was studying implementations of clean architectures written with golang, I thought actor and usecase need more emphasis , and need to 'scream more'. And stacking up entity to service, using same name again and again from entity to service or controller, is better to be avoided, and I thought we should more focus on SRP. Maybe I'm a bit presumptuous for noob gopher, but that was my take.
 
