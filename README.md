@@ -1,6 +1,6 @@
 ## What it is
 
-Ports and Adapters architecture(or more known as hexagonal architecture) is implemented. Tried to follow philosophy of 'Real Life Clean Architecture(RLCA)' of matter-battiston in Go lang, and make our 'Uncle Bob' proud again.
+Ports and Adapters architecture(or more known as hexagonal architecture) is implemented. Tried to follow philosophy of '[Real Life Clean Architecture(RLCA)](https://github.com/mattia-battiston/clean-architecture-example)' of matter-battiston in Go lang, and make our 'Uncle Bob' proud again.
 
 It is not classical layered architecture. Compared to RLCA, I put more focus on actors, and explicitly 
 
