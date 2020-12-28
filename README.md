@@ -6,6 +6,8 @@ It is not classical layered architecture. Compared to RLCA, I put more focus on 
 
 
 
+
+
 ## Why I made this
 
 There are two quotes that I like from Clean Architecutre.
@@ -15,6 +17,8 @@ There are two quotes that I like from Clean Architecutre.
 > The Single Responsibility Principle (SRP) states that each software module should have one and only one reason to change - *Unclebob* ([source](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html))
 
 When I was studying implementations of clean architectures written with golang, I thought actor and usecase need more emphasis , and need to 'scream more'. And stacking up entity to service, using same name again and again from entity to service or controller, is better to be avoided, and I thought we should more focus on SRP. Maybe I'm a bit presumptuous for noob gopher, but that was my take.
+
+
 
 
 
@@ -37,6 +41,8 @@ Above depictes the hexagonal architecture and comparison on classical layered cl
 
 
 
+
+
 ## Folder structure
 
 * /internal
@@ -50,11 +56,39 @@ Above depictes the hexagonal architecture and comparison on classical layered cl
 
 
 
+
+
 ## To run
 
 ``` bash
 go run .
 ```
+
+After project is started, access these links, and it will show some results, if test.db sqlite has some data in it.
+
+http://localhost:8000/
+
+http://localhost:8000/api/customer/ordering/foodmenus
+
+http://localhost:8000/api/customer/ordering/foodmenu/Big%20mac
+
+No unit test or integration test is implemented yet.
+
+
+
+
+
+## Project status
+
+As of 29 Dec 2020, this project is underdeveloped. 
+
+Even thouhg I developed this with glamorous ambition, it turns out to be this RLCA concept is a bit too clumsy for golang implementation when it comes to adding new features. Maybe if I could find good DI/IoC framework for golang(It was vaible using Spring with Java), then it could be viable dream. 
+
+This problems stems from over-abstraction(mainly in controllers), and golang's name overlapping. As project grows, names overlaps. While RLCA in java was causing not much of problems, in golang, it is. In java, function names were layers of member methods, class, package, and finally, gradle/maven module. But in golang, it is layers of function, pacakge, and - maybe I could segragate things with /pkg, but i think that won't solve my problem completely - thats all.
+
+I will search for more clean architecture implementation, and decide to continue this effort or not.
+
+
 
 
 
@@ -66,6 +100,8 @@ go run .
 
 
 
+
+
 ## References
 
 Real Life Clean Architecture [GIT](https://github.com/mattia-battiston/clean-architecture-example) [PPT](https://www.slideshare.net/mattiabattiston/real-life-clean-architecture-61242830)
@@ -73,6 +109,8 @@ Real Life Clean Architecture [GIT](https://github.com/mattia-battiston/clean-arc
 Clean architecture series - Part1 (Hexagonal architecture) [ARTICLE](https://dev.to/pereiren/clean-architecture-series-part-1-m64)
 
 Golang / Go Crash Course 03 | Implementing Clean Architecture principles in our REST API [VIDEO](https://www.youtube.com/watch?v=Yg_ae0UvCv4&t=2527s)
+
+
 
 
 

@@ -13,12 +13,8 @@ type sqlite_datasource struct {
 
 func (datasource *sqlite_datasource) GetAllFoodMenu() *[]entity.FoodMenu {
 	var foodMenus []entity.FoodMenu
-	//datasource.DB.Find(&foodMenus)
 
 	rows, _ := datasource.DB.Query("SELECT id, name, description, image_url FROM food_menus")
-	//var id int
-	//var firstname string
-	//var lastname string
 	for rows.Next() {
 		var foodMenu entity.FoodMenu
 		rows.Scan(&foodMenu.Id, &foodMenu.Name, &foodMenu.Description, &foodMenu.ImageUrl)
@@ -55,8 +51,6 @@ func NewCustomerOrderingSqliteDataStorage() DataProvider {
 	if err != nil {
 		panic("failed to provisioning the database")
 	}
-
-	//database.AutoMigrate(&entity.FoodMenu{})
 
 	return &sqlite_datasource{
 		DB: database,
