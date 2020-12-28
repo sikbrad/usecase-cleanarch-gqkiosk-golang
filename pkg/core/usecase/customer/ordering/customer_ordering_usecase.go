@@ -2,13 +2,19 @@ package ordering
 
 import (
 	"../../../entity"
-	"github.com/sikbrad/usecase-cleanarch-gqkiosk-golang/core/entity"
 )
 
-var (
-	fm entity.FoodMenu
-)
 
-type CustomerOrderingUsecase interface {
-	GetAllFoodMenu() []entity.FoodMenu
+type CustomerOrderingUsecase struct {
+	GetAllFoodMenuPort GetAllFoodMenuPorter
+}
+
+func NewCustomerOrderingUsecase(getAllFoodMenuPort GetAllFoodMenuPorter) *CustomerOrderingUsecase{
+	return &CustomerOrderingUsecase{
+		GetAllFoodMenuPort: getAllFoodMenuPort,
+	}
+}
+
+func (uc *CustomerOrderingUsecase) GetAll() []entity.FoodMenu {
+	return uc.GetAllFoodMenuPort.GetAll()
 }
