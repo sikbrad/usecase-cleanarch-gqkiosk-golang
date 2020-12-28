@@ -1,7 +1,3 @@
-[TOC]
-
-
-
 ## What it is
 
 Ports and Adapters architecture(or more known as hexagonal architecture) is implemented. Tried to follow philosophy of 'Real Life Clean Architecture(RLCA)' of matter-battiston in Go lang, and make our 'Uncle Bob' proud again.
