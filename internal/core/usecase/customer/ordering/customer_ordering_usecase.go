@@ -16,5 +16,5 @@ func NewCustomerOrderingUsecase(
 }
 
 func (uc *CustomerOrderingUsecase) GetAllFoodMenu() ([]entity.FoodMenu, error) {
-	return uc.getAllFoodMenuPort.GetAll()
+	return uc.getAllFoodMenuPort.GetAllFoodMenu()
 }
