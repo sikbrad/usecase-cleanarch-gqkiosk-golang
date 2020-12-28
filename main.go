@@ -11,9 +11,8 @@ func init() {
 
 }
 
-func main(){
+func main() {
 	log.Println("starting gqskiosk server")
-
 
 	log.Println("run1")
 	run1()
@@ -48,6 +47,9 @@ func run2() {
 	foodmenus, _ := uc.GetAllFoodMenu()
 	log.Printf("Getting all Foodmenus : %#v\n", foodmenus)
 
-	foodmenu, _ := uc.GetFoodMenuWithName("Big Mac")
+	foodmenus, _ = uc.GetAllFoodMenu()
+	log.Printf("Getting all Foodmenus2 : %#v\n", foodmenus)
+
+	foodmenu, _ := uc.GetFoodMenuWithName("Burger")
 	log.Printf("Get foodmenu with name 'Big Mac' : %#v\n", foodmenu)
 }
