@@ -1,11 +1,9 @@
 package ordering
 
-import (
-	"../../../entity"
-)
+import "github.com/sikbrad/usecase-cleanarch-gqkiosk-golang/internal/core/entity"
 
 //as golang recommends to youse 'getter' in their interface name, i changed it.
 
 type GetAllFoodMenuPorter interface{
-	GetAll() []entity.FoodMenu
+	GetAll() ([]entity.FoodMenu, error)
 }
