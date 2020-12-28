@@ -1,8 +1,10 @@
 package dataprovider
 import (
+	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 	"github.com/sikbrad/usecase-cleanarch-gqkiosk-golang/internal/core/entity"
+	"log"
 )
 
 type sqlite_datasource struct{
@@ -17,9 +19,12 @@ func (datasource* sqlite_datasource) GetAllFoodMenu() *[]entity.FoodMenu {
 
 func (datasource* sqlite_datasource) GetFoodMenuWithName(searchName string) *entity.FoodMenu {
 	var foodMenu *entity.FoodMenu
-	if err := datasource.DB.Where("id = ?", searchName).First(foodMenu).Error; err != nil {
+	if err := datasource.DB.Where("name = '?'", searchName).First(foodMenu).Error; err != nil {
 		//err
+		log.Fatal("error in GetFoodMenuWithName : ", err.Error())
+		return nil
 	}
+	fmt.Printf("foodMenu : %#v", *foodMenu)
 	return foodMenu
 }
 
