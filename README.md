@@ -6,8 +6,6 @@ It is not classical layered architecture. Compared to RLCA, I put more focus on 
 
 
 
-
-
 ## Why I made this
 
 There are two quotes that I like from Clean Architecutre.
@@ -17,8 +15,6 @@ There are two quotes that I like from Clean Architecutre.
 > The Single Responsibility Principle (SRP) states that each software module should have one and only one reason to change - *Unclebob* ([source](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html))
 
 When I was studying implementations of clean architectures written with golang, I thought actor and usecase need more emphasis , and need to 'scream more'. And stacking up entity to service, using same name again and again from entity to service or controller, is better to be avoided, and I thought we should more focus on SRP. Maybe I'm a bit presumptuous for noob gopher, but that was my take.
-
-
 
 
 
@@ -41,8 +37,6 @@ Above depictes the hexagonal architecture and comparison on classical layered cl
 
 
 
-
-
 ## Folder structure
 
 * /internal
@@ -53,8 +47,6 @@ Above depictes the hexagonal architecture and comparison on classical layered cl
     * configuration --> configures objects
     * dataprovider --> (outgoing adapter) connects to DB. implements Ports
     * entrypoint --> (incoming adapter) controllers(web, rest, ws ...), routers
-
-
 
 
 
@@ -74,7 +66,7 @@ http://localhost:8000/api/customer/ordering/foodmenu/Big%20mac
 
 No unit test or integration test is implemented yet.
 
-
+Tested with go 1.15.6, on macOS Catalina(10.15.4)
 
 
 
@@ -90,15 +82,11 @@ I will search for more clean architecture implementation, and decide to continue
 
 
 
-
-
 ## Future plan
 
 * Integration test needed for all usecase ports
 * Web front needed
 * Maybe I will be able to implement CQRS - all data access command is managed by ports, and direct interface is hidden from usecase user, so it is viable dream(or I dream too much!)
-
-
 
 
 
@@ -109,8 +97,6 @@ Real Life Clean Architecture [GIT](https://github.com/mattia-battiston/clean-arc
 Clean architecture series - Part1 (Hexagonal architecture) [ARTICLE](https://dev.to/pereiren/clean-architecture-series-part-1-m64)
 
 Golang / Go Crash Course 03 | Implementing Clean Architecture principles in our REST API [VIDEO](https://www.youtube.com/watch?v=Yg_ae0UvCv4&t=2527s)
-
-
 
 
 
