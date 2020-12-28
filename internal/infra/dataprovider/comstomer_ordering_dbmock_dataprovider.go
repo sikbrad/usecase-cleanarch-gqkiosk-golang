@@ -12,8 +12,20 @@ type repo struct{
 
 }
 
-func (r *repo) GetAllFoodMenu() ([]entity.FoodMenu, error) {
-	return foodMenus, nil
+func (_ *repo) GetFoodMenuWithName(searchName string) (*entity.FoodMenu) {
+
+	var foodMenu *entity.FoodMenu
+	for _, v := range foodMenus {
+		if v.Name == searchName {
+			foodMenu = &v
+		}
+	}
+
+	return foodMenu
+}
+
+func (_ *repo) GetAllFoodMenu() (*[]entity.FoodMenu) {
+	return &foodMenus
 }
 
 func NewCustomerOrderingDbmockDataStorage() DataProvider{
