@@ -82,11 +82,15 @@ I will search for more clean architecture implementation, and decide to continue
 
 
 
-## Future plan
+## Possible future improvements
 
 * Integration test needed for all usecase ports
 * Web front needed
 * Maybe I will be able to implement CQRS - all data access command is managed by ports, and direct interface is hidden from usecase user, so it is viable dream(or I dream too much!)
+* Dockerising
+* "profile" feature of spring
+* Get SQL by reading sql file, when provisioning
+* More entrypoints like web and websocket
 
 
 
