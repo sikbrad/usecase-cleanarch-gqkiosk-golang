@@ -8,11 +8,11 @@ var (
 	foodMenus	[]entity.FoodMenu
 )
 
-type repo struct{
+type dbmock_datasource struct{
 
 }
 
-func (_ *repo) GetFoodMenuWithName(searchName string) (*entity.FoodMenu) {
+func (_ *dbmock_datasource) GetFoodMenuWithName(searchName string) (*entity.FoodMenu) {
 
 	var foodMenu *entity.FoodMenu
 	for _, v := range foodMenus {
@@ -24,11 +24,11 @@ func (_ *repo) GetFoodMenuWithName(searchName string) (*entity.FoodMenu) {
 	return foodMenu
 }
 
-func (_ *repo) GetAllFoodMenu() (*[]entity.FoodMenu) {
+func (_ *dbmock_datasource) GetAllFoodMenu() (*[]entity.FoodMenu) {
 	return &foodMenus
 }
 
-func NewCustomerOrderingDbmockDataStorage() DataProvider{
+func NewCustomerOrderingDbmockDataStorage() (DataProvider){
 
 	// for debugging, add data
 	foodMenus = append(foodMenus, *entity.NewFoodMenu(
@@ -42,7 +42,7 @@ func NewCustomerOrderingDbmockDataStorage() DataProvider{
 		"http://google.com/image.png"),
 	)
 
-	return &repo{
+	return &dbmock_datasource{
 
 	}
 }

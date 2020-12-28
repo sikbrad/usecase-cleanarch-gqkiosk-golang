@@ -14,17 +14,40 @@ func init() {
 func main(){
 	log.Println("starting gqskiosk server")
 
+
+	log.Println("run1")
+	run1()
+
+	log.Println("run2")
+	run2()
+
+	log.Println("finishing gqskiosk server")
+}
+
+func run1() {
 	dataprovider := dataprovider.NewCustomerOrderingDbmockDataStorage()
 	uc := ordering.NewCustomerOrderingUsecase(
 		dataprovider, //getAllFoodMenuPorter
 		dataprovider, //getFoodMenuWithNamePorter
-		)
+	)
 
 	foodmenus, _ := uc.GetAllFoodMenu()
 	log.Printf("Getting all Foodmenus : %#v\n", foodmenus)
 
 	foodmenu, _ := uc.GetFoodMenuWithName("Big Mac")
 	log.Printf("Get foodmenu with name 'Big Mac' : %#v\n", foodmenu)
+}
 
-	log.Println("finishing gqskiosk server")
+func run2() {
+	dataprovider := dataprovider.NewCustomerOrderingSqliteDataStorage()
+	uc := ordering.NewCustomerOrderingUsecase(
+		dataprovider, //getAllFoodMenuPorter
+		dataprovider, //getFoodMenuWithNamePorter
+	)
+
+	foodmenus, _ := uc.GetAllFoodMenu()
+	log.Printf("Getting all Foodmenus : %#v\n", foodmenus)
+
+	foodmenu, _ := uc.GetFoodMenuWithName("Big Mac")
+	log.Printf("Get foodmenu with name 'Big Mac' : %#v\n", foodmenu)
 }
